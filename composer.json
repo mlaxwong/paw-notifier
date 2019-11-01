@@ -1,0 +1,19 @@
+{
+    "name": "mlaxwong/paw-notifier",
+    "type": "paw-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mlax Wong",
+            "email": "mlaxwong@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "paw\\notifier\\": "src/"
+        }
+    },
+    "require": {
+        "mlaxwong/paw": "^1.1"
+    }
+}
