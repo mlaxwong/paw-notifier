@@ -14,6 +14,7 @@
         }
     },
     "require": {
-        "mlaxwong/paw": "^1.1"
+        "mlaxwong/paw": "^1.1",
+        "mlaxwong/paw-user": "^1.0"
     }
 }

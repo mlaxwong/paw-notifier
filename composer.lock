@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "675972c9edabaa4466aafd312e978738",
+    "content-hash": "bf7be1cf948a8f6f9293082d249c36d0",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -373,6 +373,41 @@
             ],
             "description": "Paw Yii2 Framework",
             "time": "2019-10-25T11:14:44+00:00"
+        },
+        {
+            "name": "mlaxwong/paw-user",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mlaxwong/paw-user.git",
+                "reference": "f79e54b185725f989730592f2afee76e652ee029"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mlaxwong/paw-user/zipball/f79e54b185725f989730592f2afee76e652ee029",
+                "reference": "f79e54b185725f989730592f2afee76e652ee029",
+                "shasum": ""
+            },
+            "require": {
+                "mlaxwong/paw": "^1.1"
+            },
+            "type": "paw-plugin",
+            "autoload": {
+                "psr-4": {
+                    "paw\\user\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mlax Wong",
+                    "email": "mlaxwong@gmail.com"
+                }
+            ],
+            "time": "2019-08-25T02:18:45+00:00"
         },
         {
             "name": "nterms/yii2-mailqueue",
