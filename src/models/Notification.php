@@ -37,4 +37,19 @@ class Notification extends ActiveRecord
         $this->message_text = $message;
         $this->message_html = "<p>$message</p>";
     }
+
+    public function getIsSeen()
+    {
+        return $this->is_seen;
+    }
+
+    public function markAsSeen()
+    {
+        if (!$this->getIsSeen()) {
+            $this->is_seen = true;
+            $this->seen_at = new \yii\db\Expression('NOW()');
+            return $this->save();
+        }
+        return true;
+    }
 }

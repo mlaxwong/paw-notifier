@@ -78,4 +78,46 @@ class Notifier extends Component implements \yii\base\BootstrapInterface
         }
         return $notification;
     }
+
+    public function totalUnseen()
+    {
+        $count = 0;
+        if (Yii::$app instanceof \yii\web\Application && !Yii::$app->user->isGuest) {
+            $count = Notification::find()
+                ->andWhere(['user_id' => Yii::$app->user->id])
+                ->andWhere(['is_seen' => true])
+                ->count();
+            ;
+        }
+        return $count;
+    }
+
+    public function getNotificationQuery()
+    {
+        return Notification::find()
+            ->andWhere(['user_id' => Yii::$app->user->id])
+            ->orderBy([
+                'level' => SORT_ASC,
+                'created_at' => SORT_DESC,
+            ]);
+    }
+
+    public function getAllSeen()
+    {
+        return $this->getNotificationQuery()
+            ->andWhere(['is_seen' => true])
+            ->all();
+    }
+
+    public function getAllUnSeen()
+    {
+        return $this->getNotificationQuery()
+            ->andWhere(['is_seen' => false])
+            ->all();
+    }
+
+    public function getAll()
+    {
+        return $this->getNotificationQuery()->all();
+    }
 }
