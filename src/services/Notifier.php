@@ -79,13 +79,13 @@ class Notifier extends Component implements \yii\base\BootstrapInterface
         return $notification;
     }
 
-    public function totalUnseen()
+    public function getTotalUnseen()
     {
         $count = 0;
         if (Yii::$app instanceof \yii\web\Application && !Yii::$app->user->isGuest) {
             $count = Notification::find()
                 ->andWhere(['user_id' => Yii::$app->user->id])
-                ->andWhere(['is_seen' => true])
+                ->andWhere(['is_seen' => false])
                 ->count();
             ;
         }
